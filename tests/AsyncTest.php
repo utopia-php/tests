@@ -50,7 +50,7 @@ class AsyncTest extends TestCase
         }, timeoutMs: 5000, waitMs: 100);
 
         // Counter should be exactly 2, not more
-        $this->assertEquals(2, $counter);
+        $this->assertSame(2, $counter);
     }
 
     public function testDefaultTimeout(): void
@@ -82,9 +82,9 @@ class AsyncTest extends TestCase
             $counter++;
             $this->assertGreaterThan(0, $counter);
             $this->assertLessThanOrEqual(10, $counter);
-            $this->assertEquals(3, $counter); // Will pass on 3rd attempt
+            $this->assertSame(3, $counter); // Will pass on 3rd attempt
         }, timeoutMs: 3000, waitMs: 100);
 
-        $this->assertEquals(3, $counter);
+        $this->assertSame(3, $counter);
     }
 }
