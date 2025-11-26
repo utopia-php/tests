@@ -49,7 +49,7 @@ class MyTest extends TestCase
         // Wait until the result is set (max 10 seconds, check every 500ms)
         self::assertEventually(function () use (&$result) {
             $this->assertNotNull($result);
-            $this->assertEquals('expected', $result);
+            $this->assertSame('expected', $result);
         }, timeoutMs: 10000, waitMs: 500);
     }
 }
