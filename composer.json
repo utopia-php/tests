@@ -1,5 +1,5 @@
 {
-    "name": "utopia-php/test",
+    "name": "utopia-php/tests",
     "description": "Lite & fast micro PHP test framework that is **easy to use**.",
     "type": "library",
     "keywords": ["php","framework", "upf", "utopia", "test"],
