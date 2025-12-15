@@ -1,6 +1,6 @@
 <?php
 
-namespace Utopia\Test\Extensions\Async\Exceptions;
+namespace Utopia\Tests\Extensions\Async\Exceptions;
 
 /**
  * Critical exception that should not be retried

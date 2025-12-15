@@ -3,8 +3,8 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Utopia\Test\Extensions\Async;
-use Utopia\Test\Extensions\Async\Exceptions\Critical;
+use Utopia\Tests\Extensions\Async;
+use Utopia\Tests\Extensions\Async\Exceptions\Critical;
 
 class AsyncTest extends TestCase
 {
