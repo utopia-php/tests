@@ -1,9 +1,9 @@
 <?php
 
-namespace Utopia\Test\Extensions\Async;
+namespace Utopia\Tests\Extensions\Async;
 
 use PHPUnit\Framework\Constraint\Constraint;
-use Utopia\Test\Extensions\Async\Exceptions\Critical;
+use Utopia\Tests\Extensions\Async\Exceptions\Critical;
 
 /**
  * Constraint that retries a probe callable until it succeeds or times out

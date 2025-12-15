@@ -1,9 +1,9 @@
 <?php
 
-namespace Utopia\Test\Extensions;
+namespace Utopia\Tests\Extensions;
 
 use PHPUnit\Framework\Assert;
-use Utopia\Test\Extensions\Async\Eventually;
+use Utopia\Tests\Extensions\Async\Eventually;
 
 const DEFAULT_TIMEOUT_MS = 10000;
 const DEFAULT_WAIT_MS = 500;

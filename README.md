@@ -1,11 +1,11 @@
-# Utopia Test
+# Utopia Tests
 
 A lightweight PHP testing library that provides useful testing utilities and extensions for PHPUnit.
 
 ## Installation
 
 ```bash
-composer require utopia-php/test
+composer require utopia-php/tests
 ```
 
 ## Requirements
@@ -31,7 +31,7 @@ Repeatedly executes a callable until it succeeds or times out. This is useful fo
 
 ```php
 use PHPUnit\Framework\TestCase;
-use Utopia\Test\Extensions\Async;
+use Utopia\Tests\Extensions\Async;
 
 class MyTest extends TestCase
 {
@@ -66,7 +66,7 @@ class MyTest extends TestCase
 If you need to immediately fail the test without retrying, throw a `Critical` exception:
 
 ```php
-use Utopia\Test\Extensions\Async\Exceptions\Critical;
+use Utopia\Tests\Extensions\Async\Exceptions\Critical;
 
 self::assertEventually(function () use ($connection) {
     if ($connection->isClosed()) {
