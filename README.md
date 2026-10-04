@@ -1,5 +1,8 @@
 # Utopia Tests
 
+> [!IMPORTANT]
+> This repository is a read-only mirror of `packages/tests` in Appwrite's private Cloud repository (appwrite-labs/cloud). Development happens there, so pull requests and issues opened here are closed automatically.
+
 A lightweight PHP testing library that provides useful testing utilities and extensions for PHPUnit.
 
 ## Installation
@@ -78,29 +81,19 @@ self::assertEventually(function () use ($connection) {
 
 ## Development
 
-### Run Tests
+The package is developed in `packages/tests` of appwrite-labs/cloud, which supplies PHPUnit, Pint, PHPStan and Rector. From that repository's root:
 
 ```bash
-composer install --ignore-platform-reqs
+bin/monorepo test tests          # unit tests
+bin/monorepo check tests --fix   # Pint, PHPStan, Rector
+```
+
+On a standalone checkout of this mirror, the manifest no longer pulls in PHPUnit, so add it first:
+
+```bash
+composer install
+composer require --dev phpunit/phpunit:^12
 composer test
-```
-
-### Code Formatting
-
-```bash
-composer format
-```
-
-### Static Analysis
-
-```bash
-composer check
-```
-
-### Linting
-
-```bash
-composer lint
 ```
 
 ## License

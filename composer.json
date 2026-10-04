@@ -2,14 +2,17 @@
     "name": "utopia-php/tests",
     "description": "Lite & fast micro PHP test framework that is **easy to use**.",
     "type": "library",
-    "keywords": ["php","framework", "upf", "utopia", "tests"],
+    "keywords": [
+        "php",
+        "framework",
+        "upf",
+        "utopia",
+        "tests"
+    ],
     "license": "MIT",
     "minimum-stability": "stable",
     "scripts": {
-        "lint": "./vendor/bin/pint --test --config pint.json",
-        "format": "./vendor/bin/pint --config pint.json",
-        "check": "./vendor/bin/phpstan analyse --level 8 -c phpstan.neon src tests",
-        "test": "./vendor/bin/phpunit --configuration phpunit.xml"
+        "test": "phpunit"
     },
     "authors": [
         {
@@ -18,15 +21,17 @@
         }
     ],
     "autoload": {
-        "psr-4": {"Utopia\\Tests\\": "src/Tests"}
+        "psr-4": {
+            "Utopia\\Tests\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Utopia\\Tests\\Tests\\": "tests/"
+        }
     },
     "require": {
         "php": ">=8.3"
-    },
-    "require-dev": {
-        "phpstan/phpstan": "2.0.*",
-        "phpunit/phpunit": "12.4.*",
-        "laravel/pint": "1.25.*"
     },
     "config": {
         "allow-plugins": {

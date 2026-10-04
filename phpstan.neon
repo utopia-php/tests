@@ -1,3 +1,5 @@
 parameters:
-  excludePaths:
-    - vendor
+    level: max
+    paths:
+        - src
+        - tests

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Utopia\Tests\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Utopia\Tests\Extensions\Async;
@@ -38,18 +38,22 @@ class AsyncTest extends TestCase
     public function testCriticalExceptionStopsRetrying(): void
     {
         $counter = 0;
+        $thrown = null;
 
-        $this->expectException(Critical::class);
+        try {
+            self::assertEventually(function () use (&$counter) {
+                $counter++;
+                if ($counter === 2) {
+                    throw new Critical('Critical error occurred');
+                }
+                $this->fail('Should fail before reaching this');
+            }, timeoutMs: 5000, waitMs: 100);
+        } catch (Critical $exception) {
+            $thrown = $exception;
+        }
 
-        self::assertEventually(function () use (&$counter) {
-            $counter++;
-            if ($counter === 2) {
-                throw new Critical('Critical error occurred');
-            }
-            $this->fail('Should fail before reaching this');
-        }, timeoutMs: 5000, waitMs: 100);
-
-        // Counter should be exactly 2, not more
+        $this->assertInstanceOf(Critical::class, $thrown);
+        // The probe ran exactly twice: the critical exception ended the retries
         $this->assertSame(2, $counter);
     }
 
